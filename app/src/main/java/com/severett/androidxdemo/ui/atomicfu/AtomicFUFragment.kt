@@ -15,9 +15,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class AtomicFUFragment : Fragment() {
-    private val safeCounter = atomic(0)
-    private var unsafeCounter = 0
-
     private var _binding: FragmentAtomicfuBinding? = null
 
     // This property is only valid between onCreateView and
@@ -38,20 +35,30 @@ class AtomicFUFragment : Fragment() {
         atomicFUViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        runBlocking {
-            (0 until 1000).map {
-                CoroutineScope(Dispatchers.Default).launch {
-                    safeCounter += 1
-                    unsafeCounter += 1
-                }
-            }.forEach { it.join() }
+        atomicFUViewModel.resetText()
+        binding.raceButton.setOnClickListener {
+            val (safeValue, unsafeValue) = runRace()
+            atomicFUViewModel.text.value = "Safe | Unsafe: $safeValue | $unsafeValue"
         }
-        atomicFUViewModel.text.value = "Safe | Unsafe: ${safeCounter.value} | $unsafeCounter"
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun runRace(): Pair<Int, Int> {
+        val safeCounter = atomic(0)
+        var unsafeCounter = 0
+        runBlocking {
+            (0 until 10_000).map {
+                CoroutineScope(Dispatchers.Default).launch {
+                    safeCounter += 1
+                    unsafeCounter += 1
+                }
+            }.forEach { it.join() }
+        }
+        return safeCounter.value to unsafeCounter
     }
 }
