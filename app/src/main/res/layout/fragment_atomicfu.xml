@@ -27,7 +27,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginEnd="160dp"
         android:layout_marginBottom="196dp"
-        android:text="@string/button_atomicfu"
+        android:text="@string/button_atomicfu_execute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"

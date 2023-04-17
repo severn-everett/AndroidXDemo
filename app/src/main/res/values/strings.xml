@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">AndroidXDemo</string>
+    <!-- Titles -->
     <string name="title_home">Home</string>
     <string name="title_serialization">Serialization</string>
     <string name="title_atomicfu">AtomicFU</string>
-    <string name="button_atomicfu">Run Race</string>
+    <!-- Buttons -->
+    <string name="button_atomicfu_execute">Run Race</string>
+    <string name="button_serialization_execute">Run Serde</string>
+    <!-- Inputs -->
+    <string name="input_serialization_fizz">Enter Fizz</string>
+    <string name="input_serialization_bazz">Enter Bazz (Comma-Separated)</string>
+    <string name="input_serialization_count">Enter Count</string>
+    <!-- Labels -->
+    <string name="label_serialization_serialized">Serialized Foo</string>
+    <string name="label_serialization_deserialized">Deserialized Foo</string>
+    <!-- Defaults -->
+    <string name="default_serialization_fizz">Default Fizz</string>
+    <string name="default_serialization_bazz">Default Bazz</string>
+    <string name="default_serialization_count">0</string>
 </resources>

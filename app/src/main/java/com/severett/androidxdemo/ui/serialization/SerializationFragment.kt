@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.severett.androidxdemo.R
 import com.severett.androidxdemo.databinding.FragmentSerializationBinding
 
 class SerializationFragment : Fragment() {
@@ -28,6 +29,9 @@ class SerializationFragment : Fragment() {
         _binding = FragmentSerializationBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.enterFizzLabel.text = resources.getString(R.string.input_serialization_fizz)
+        binding.enterBazzLabel.text = resources.getString(R.string.input_serialization_bazz)
+        binding.enterCountLabel.text = resources.getString(R.string.input_serialization_count)
         val textView: TextView = binding.textSerialization
         serializationViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it

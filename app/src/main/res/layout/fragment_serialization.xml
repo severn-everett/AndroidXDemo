@@ -17,6 +17,98 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646" />
+
+    <TextView
+        android:id="@+id/enterFizzLabel"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/input_serialization_fizz" />
+
+    <EditText
+        android:id="@+id/editTextFizz"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/default_serialization_fizz"
+        android:inputType="textPersonName"
+        android:labelFor="@id/enterFizzLabel"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterFizzLabel"
+        tools:text="@string/default_serialization_fizz" />
+
+    <TextView
+        android:id="@+id/enterBazzLabel"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFizz"
+        tools:text="@string/input_serialization_bazz" />
+
+    <EditText
+        android:id="@+id/editTextBazz"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/default_serialization_bazz"
+        android:inputType="textPersonName"
+        android:labelFor="@id/enterBazzLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterBazzLabel"
+        tools:text="@string/default_serialization_bazz" />
+
+    <TextView
+        android:id="@+id/enterCountLabel"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBazz"
+        tools:text="@string/input_serialization_count" />
+
+    <EditText
+        android:id="@+id/editTextCount"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/default_serialization_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterCountLabel" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
