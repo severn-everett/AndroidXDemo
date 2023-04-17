@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AndroidXDemo</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_serialization">Serialization</string>
     <string name="title_atomicfu">AtomicFU</string>
     <string name="button_atomicfu">Run Race</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.severett.androidxdemo.ui.dashboard
+package com.severett.androidxdemo.ui.serialization
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.severett.androidxdemo.databinding.FragmentDashboardBinding
+import com.severett.androidxdemo.databinding.FragmentSerializationBinding
 
-class DashboardFragment : Fragment() {
+class SerializationFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentSerializationBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val serializationViewModel =
+            ViewModelProvider(this).get(SerializationViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentSerializationBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textSerialization
+        serializationViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

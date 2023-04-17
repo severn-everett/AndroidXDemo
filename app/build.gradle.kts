@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    kotlin("android")
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -36,7 +37,8 @@ android {
 }
 
 dependencies {
-    // Production
+    //// Production
+    // Implementation
     implementation("androidx.core:core-ktx:1.10.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -47,9 +49,12 @@ dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation("org.jetbrains.kotlinx:atomicfu:0.20.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-    // Test
+    // Runtime
+    runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    //// Test
+    // Implementation
     testImplementation("junit:junit:4.13.2")
-    // Android Test
+    // Android implementation
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
