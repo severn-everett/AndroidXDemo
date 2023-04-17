@@ -15,7 +15,7 @@
     <string name="label_serialization_serialized">Serialized Foo</string>
     <string name="label_serialization_deserialized">Deserialized Foo</string>
     <!-- Defaults -->
-    <string name="default_serialization_fizz">Default Fizz</string>
-    <string name="default_serialization_bazz">Default Bazz</string>
+    <string name="default_serialization_fizz">Fizz Value</string>
+    <string name="default_serialization_bazz">Bazz Value</string>
     <string name="default_serialization_count">0</string>
 </resources>
