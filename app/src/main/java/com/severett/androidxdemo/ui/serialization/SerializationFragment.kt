@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.severett.androidxdemo.R
 import com.severett.androidxdemo.databinding.FragmentSerializationBinding
+import com.severett.androidxdemo.model.Foo
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class SerializationFragment : Fragment() {
 
@@ -23,8 +26,9 @@ class SerializationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val serializationViewModel =
-            ViewModelProvider(this).get(SerializationViewModel::class.java)
+        val serializationViewModel = ViewModelProvider(
+            this
+        )[SerializationViewModel::class.java]
 
         _binding = FragmentSerializationBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -32,9 +36,32 @@ class SerializationFragment : Fragment() {
         binding.enterFizzLabel.text = resources.getString(R.string.input_serialization_fizz)
         binding.enterBazzLabel.text = resources.getString(R.string.input_serialization_bazz)
         binding.enterCountLabel.text = resources.getString(R.string.input_serialization_count)
-        val textView: TextView = binding.textSerialization
-        serializationViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val serializedFooTextView = binding.serializedFooDisplay
+        serializationViewModel.serializedFooText.observe(
+            viewLifecycleOwner,
+            serializedFooTextView::setText
+        )
+        val deserializedFooTextView = binding.deserializedFooDisplay
+        serializationViewModel.deserializedFooText.observe(
+            viewLifecycleOwner,
+            deserializedFooTextView::setText
+        )
+        binding.runSerdeButton.setOnClickListener {
+            val foo = Foo(
+                fizz = binding.editTextFizz.text.toString(),
+                bazz = binding.editTextBazz.text.toString().split(","),
+                count = binding.editTextCount.text.toString().toUInt()
+            )
+            binding.serializedFooLabel.text = resources.getString(
+                R.string.label_serialization_serialized
+            )
+            val encodedFoo = Json.encodeToString(foo)
+            val decodedFoo: Foo = Json.decodeFromString(encodedFoo)
+            binding.serializedFooDisplay.text = encodedFoo
+            binding.deserializedFooLabel.text = resources.getString(
+                R.string.label_serialization_deserialized
+            )
+            binding.deserializedFooDisplay.text = decodedFoo.toString()
         }
         return root
     }

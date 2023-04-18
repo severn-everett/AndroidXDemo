@@ -49,8 +49,7 @@ dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation("org.jetbrains.kotlinx:atomicfu:0.20.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-    // Runtime
-    runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     //// Test
     // Implementation
     testImplementation("junit:junit:4.13.2")

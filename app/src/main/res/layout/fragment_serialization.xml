@@ -7,22 +7,6 @@
     tools:context=".ui.serialization.SerializationFragment">
 
     <TextView
-        android:id="@+id/text_serialization"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
-
-    <TextView
         android:id="@+id/enterFizzLabel"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -32,6 +16,7 @@
         android:paddingEnd="26dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +50,7 @@
         android:paddingEnd="26dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +83,7 @@
         android:paddingEnd="26dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,5 +103,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterCountLabel" />
+
+    <Button
+        android:id="@+id/runSerdeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="159dp"
+        android:text="@string/button_serialization_execute"
+        android:textColor="@color/apiumhub_green_main"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCount" />
+
+    <TextView
+        android:id="@+id/serializedFooLabel"
+        android:layout_width="185dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="113dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runSerdeButton"
+        tools:text="@string/label_serialization_serialized" />
+
+    <TextView
+        android:id="@+id/deserializedFooLabel"
+        android:layout_width="185dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="113dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serializedFooDisplay"
+        tools:text="@string/label_serialization_deserialized" />
+
+    <TextView
+        android:id="@+id/serializedFooDisplay"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serializedFooLabel" />
+
+    <TextView
+        android:id="@+id/deserializedFooDisplay"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deserializedFooLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
