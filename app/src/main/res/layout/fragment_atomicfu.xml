@@ -6,33 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".ui.atomicfu.AtomicFUFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/runRaceButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="160dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:text="@string/button_atomicfu_execute"
+        android:textColor="@color/apiumhub_green_main"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/raceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="196dp"
-        android:backgroundTint="@color/black"
-        android:text="@string/button_atomicfu_execute"
-        android:textColor="@color/apiumhub_green_main"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/safeValueResult"
+        android:layout_width="64dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="181dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/runRaceButton"
+        tools:text="10000" />
+
+    <TextView
+        android:id="@+id/unsafeValueResult"
+        android:layout_width="64dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="180dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/safeValueResult"
+        tools:text="10000" />
+
+    <TextView
+        android:id="@+id/unsafeValueLabel"
+        android:layout_width="120dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/safeValueLabel"
+        tools:text="@string/label_atomicfu_unsafe_value" />
+
+    <TextView
+        android:id="@+id/safeValueLabel"
+        android:layout_width="120dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="32dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runRaceButton"
+        tools:text="@string/label_atomicfu_safe_value" />
 </androidx.constraintlayout.widget.ConstraintLayout>

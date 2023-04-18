@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.severett.androidxdemo.R
 import com.severett.androidxdemo.databinding.FragmentAtomicfuBinding
 import kotlinx.atomicfu.atomic
 import kotlinx.coroutines.CoroutineScope
@@ -27,18 +27,30 @@ class AtomicFUFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val atomicFUViewModel = ViewModelProvider(this)[AtomicFUViewModel::class.java]
+        atomicFUViewModel.safeResultVal.value = ""
+        atomicFUViewModel.unsafeResultVal.value = ""
 
         _binding = FragmentAtomicfuBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        atomicFUViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val safeValueView = binding.safeValueResult
+        atomicFUViewModel.safeResultVal.observe(viewLifecycleOwner) {
+            safeValueView.text = it
         }
-        atomicFUViewModel.resetText()
-        binding.raceButton.setOnClickListener {
+        val unsafeValueView = binding.unsafeValueResult
+        atomicFUViewModel.unsafeResultVal.observe(viewLifecycleOwner) {
+            unsafeValueView.text = it
+        }
+        binding.runRaceButton.setOnClickListener {
             val (safeValue, unsafeValue) = runRace()
-            atomicFUViewModel.text.value = "Safe | Unsafe: $safeValue | $unsafeValue"
+            binding.safeValueLabel.text = resources.getString(
+                R.string.label_atomicfu_safe_value
+            )
+            binding.unsafeValueLabel.text = resources.getString(
+                R.string.label_atomicfu_unsafe_value
+            )
+            atomicFUViewModel.safeResultVal.value = safeValue.toString()
+            atomicFUViewModel.unsafeResultVal.value = unsafeValue.toString()
         }
         return root
     }
