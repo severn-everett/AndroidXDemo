@@ -9,7 +9,7 @@
         <item name="colorSecondary">@color/apiumhub_green_main</item>
         <item name="colorSecondaryVariant">@color/apiumhub_green_alt</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        <!-- Action bar theme. -->
         <item name="actionBarTheme">@style/Theme.MyApplication.ActionBar</item>
         <!-- Customize your theme here. -->
     </style>
