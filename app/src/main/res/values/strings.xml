@@ -12,8 +12,8 @@
     <string name="input_serialization_bazz">Enter Bazz (Comma-Separated)</string>
     <string name="input_serialization_count">Enter Count</string>
     <!-- Labels -->
-    <string name="label_atomicfu_safe_value">Safe Value:</string>
-    <string name="label_atomicfu_unsafe_value">Unsafe Value:</string>
+    <string name="label_atomicfu_safe_value">&#160;&#160;&#160;&#160;Safe Value: %s</string>
+    <string name="label_atomicfu_unsafe_value">Unsafe Value: %s</string>
     <string name="label_serialization_serialized">Serialized Foo</string>
     <string name="label_serialization_deserialized">Deserialized Foo</string>
     <!-- Defaults -->

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.severett.androidxdemo.R
 import com.severett.androidxdemo.databinding.FragmentAtomicfuBinding
 import kotlinx.atomicfu.atomic
@@ -26,31 +25,19 @@ class AtomicFUFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val atomicFUViewModel = ViewModelProvider(this)[AtomicFUViewModel::class.java]
-        atomicFUViewModel.safeResultVal.value = ""
-        atomicFUViewModel.unsafeResultVal.value = ""
-
         _binding = FragmentAtomicfuBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val safeValueView = binding.safeValueResult
-        atomicFUViewModel.safeResultVal.observe(viewLifecycleOwner) {
-            safeValueView.text = it
-        }
-        val unsafeValueView = binding.unsafeValueResult
-        atomicFUViewModel.unsafeResultVal.observe(viewLifecycleOwner) {
-            unsafeValueView.text = it
-        }
         binding.runRaceButton.setOnClickListener {
             val (safeValue, unsafeValue) = runRace()
             binding.safeValueLabel.text = resources.getString(
-                R.string.label_atomicfu_safe_value
+                R.string.label_atomicfu_safe_value,
+                safeValue.toString()
             )
             binding.unsafeValueLabel.text = resources.getString(
-                R.string.label_atomicfu_unsafe_value
+                R.string.label_atomicfu_unsafe_value,
+                unsafeValue.toString().padStart(5, ' ')
             )
-            atomicFUViewModel.safeResultVal.value = safeValue.toString()
-            atomicFUViewModel.unsafeResultVal.value = unsafeValue.toString()
         }
         return root
     }
