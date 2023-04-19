@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.html.HTMLFragment">
+
+    <TextView
+        android:id="@+id/enterNameLabel"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/input_html_name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSectionLabel" />
+
+    <TextView
+        android:id="@+id/stylingLabel"
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="53dp"
+        android:gravity="center"
+        android:text="@string/input_html_styling"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSectionLabel" />
+
+    <TextView
+        android:id="@+id/inputSectionLabel"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="@color/apiumhub_green_main"
+        android:gravity="center"
+        android:text="@string/label_html_input"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="@string/default_html_name"
+        android:inputType="text"
+        android:autofillHints=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterNameLabel" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBold"
+        android:layout_width="99dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="45dp"
+        android:gravity="center"
+        android:layoutDirection="inherit"
+        android:text="@string/label_html_bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stylingLabel" />
+
+    <CheckBox
+        android:id="@+id/checkboxItalics"
+        android:layout_width="112dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:layoutDirection="inherit"
+        android:text="@string/label_html_italics"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxBold" />
+
+    <CheckBox
+        android:id="@+id/checkboxUnderlined"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:layoutDirection="inherit"
+        android:text="@string/label_html_underlined"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkboxItalics" />
+
+    <Button
+        android:id="@+id/generateHTMLButton"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="116dp"
+        android:text="@string/button_html_generate"
+        android:textColor="@color/apiumhub_green_main"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSectionLabel" />
+
+    <TextView
+        android:id="@+id/generatedHTMLLabel"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/apiumhub_green_main"
+        android:gravity="center"
+        android:text="@string/label_html_generated_html"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generateHTMLButton" />
+
+    <TextView
+        android:id="@+id/generatedHTMLDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generatedHTMLLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,35 @@
 <resources>
     <string name="app_name">AndroidXDemo</string>
     <!-- Titles -->
-    <string name="title_home">Home</string>
-    <string name="title_serialization">Serialization</string>
     <string name="title_atomicfu">AtomicFU</string>
+    <string name="title_html">HTML</string>
+    <string name="title_serialization">Serialization</string>
     <!-- Buttons -->
     <string name="button_atomicfu_execute">Run Race</string>
+    <string name="button_html_generate">Generate HTML</string>
     <string name="button_serialization_execute">Run Serde</string>
     <!-- Inputs -->
-    <string name="input_serialization_fizz">Enter Fizz</string>
-    <string name="input_serialization_bazz">Enter Bazz (Comma-Separated)</string>
-    <string name="input_serialization_count">Enter Count</string>
+    <string name="input_html_name"><u>Name:</u></string>
+    <string name="input_html_styling"><u>Styling:</u></string>
+    <string name="input_serialization_fizz">Enter Fizz:</string>
+    <string name="input_serialization_bazz">Enter Bazz (Comma-Separated):</string>
+    <string name="input_serialization_count">Enter Count:</string>
     <!-- Labels -->
     <string name="label_atomicfu_safe_value">&#160;&#160;&#160;&#160;Safe Value: %s</string>
     <string name="label_atomicfu_unsafe_value">Unsafe Value: %s</string>
+    <string name="label_html_input">Input</string>
+    <string name="label_html_generated_html">Generated HTML</string>
+    <string name="label_html_italics">Italics</string>
+    <string name="label_html_bold">Bold</string>
+    <string name="label_html_underlined"><u>Underlined</u></string>
     <string name="label_serialization_serialized">Serialized Foo</string>
     <string name="label_serialization_deserialized">Deserialized Foo</string>
     <!-- Defaults -->
+    <string name="default_html_name">Enter Name</string>
     <string name="default_serialization_fizz">Fizz Value</string>
     <string name="default_serialization_bazz">Bazz Value</string>
     <string name="default_serialization_count">0</string>
+    <!-- Content -->
+    <string name="content_html_hello">Hello, %s!</string>
+    <string name="content_html_link">Would you like to know more?</string>
 </resources>

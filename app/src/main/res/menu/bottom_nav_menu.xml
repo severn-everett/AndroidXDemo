@@ -2,11 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
-
-    <item
         android:id="@+id/navigation_serialization"
         android:icon="@drawable/ic_json_black_24dp"
         android:title="@string/title_serialization" />
@@ -15,5 +10,10 @@
         android:id="@+id/navigation_atomicfu"
         android:icon="@drawable/ic_atomicfu_black_24dp"
         android:title="@string/title_atomicfu" />
+
+    <item
+        android:id="@+id/navigation_html"
+        android:icon="@drawable/ic_html_black_24dp"
+        android:title="@string/title_html" />
 
 </menu>

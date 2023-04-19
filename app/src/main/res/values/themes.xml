@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSurface">@color/apiumhub_green_main</item>
+        <item name="colorOnSurface">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/apiumhub_green_main</item>
         <item name="colorSecondaryVariant">@color/apiumhub_green_alt</item>
