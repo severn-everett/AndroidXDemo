@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.severett.androidxdemo.R
@@ -50,6 +52,55 @@ class DateTimeFragment : Fragment() {
             }
             datePicker.show(parentFragmentManager, null)
         }
+
+        ArrayAdapter.createFromResource(
+            this.requireContext(),
+            R.array.content_datetime_timezones,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            val timeZoneSpinner = binding.timeZoneSpinner
+            timeZoneSpinner.adapter = adapter
+            timeZoneSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View?,
+                    pos: Int,
+                    id: Long
+                ) {
+                    val timezone = when (pos) {
+                        1 -> "Africa/Cairo"
+                        2 -> "America/New_York"
+                        3 -> "Europe/London"
+                        4 -> "Asia/Kolkata"
+                        5 -> "Asia/Tokyo"
+                        else -> null
+                    }
+                    if (timezone == null) {
+                        binding.currentTimeDisplay.text = ""
+                    } else {
+                        val currentTime = Clock.System.now().toLocalDateTime(
+                            TimeZone.of(timezone)
+                        )
+                        binding.currentTimeDisplay.text = resources.getString(
+                            R.string.content_datetime_current_time,
+                            parent.getItemAtPosition(pos),
+                            currentTime
+                        )
+                    }
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // No-Op
+                }
+            }
+        }
+        val timeZoneSpinner = binding.timeZoneSpinner
+        timeZoneSpinner.adapter = ArrayAdapter.createFromResource(
+            this.requireContext(),
+            R.array.content_datetime_timezones,
+            android.R.layout.simple_spinner_item
+        )
+
 
         return root
     }

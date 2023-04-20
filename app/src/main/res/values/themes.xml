@@ -12,10 +12,24 @@
         <!-- Action bar theme. -->
         <item name="actionBarTheme">@style/Theme.MyApplication.ActionBar</item>
         <!-- Customize your theme here. -->
+        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/spinnerDropDownItemStyle</item>
     </style>
 
     <style name="Theme.MyApplication.ActionBar" parent="ThemeOverlay.MaterialComponents.ActionBar">
         <!-- text color for action bar title -->
         <item name="android:textColorPrimary">@color/apiumhub_green_main</item>
+    </style>
+
+    <style name="spinnerItemStyle">
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:padding">18dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>

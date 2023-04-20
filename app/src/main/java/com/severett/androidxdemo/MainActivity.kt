@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_serialization,
                 R.id.navigation_atomicfu,
-                R.id.navigation_html
+                R.id.navigation_html,
+                R.id.navigation_datetime
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -11,6 +11,7 @@
     <string name="button_html_generate">Generate</string>
     <string name="button_serialization_execute">Run Serde</string>
     <!-- Inputs -->
+    <string name="input_datetime_timezone">Select Time Zone:</string>
     <string name="input_html_name"><u>Name:</u></string>
     <string name="input_html_styling"><u>Styling:</u></string>
     <string name="input_serialization_fizz">Enter Fizz:</string>
@@ -39,7 +40,9 @@
         <item quantity="one">%d day between %s and now.</item>
         <item quantity="other">%d days between %s and now.</item>
     </plurals>
+    <string name="content_datetime_current_time">The current time in %s is %s.</string>
     <string-array name="content_datetime_timezones">
+        <item> </item>
         <item>Cairo</item>
         <item>New York City</item>
         <item>London</item>
