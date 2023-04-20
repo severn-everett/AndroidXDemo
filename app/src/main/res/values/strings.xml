@@ -15,6 +15,7 @@
     <string name="input_serialization_bazz">Enter Bazz (Comma-Separated):</string>
     <string name="input_serialization_count">Enter Count:</string>
     <!-- Labels -->
+    <string name="label_atomicfu_header">"Up And Atom!" Variable Races</string>
     <string name="label_atomicfu_safe_value">&#160;&#160;&#160;&#160;Safe Value: %s</string>
     <string name="label_atomicfu_unsafe_value">Unsafe Value: %s</string>
     <string name="label_html_input">Input</string>
