@@ -23,4 +23,10 @@
         android:label="@string/title_html"
         tools:layout="@layout/fragment_html" />
 
+    <fragment
+        android:id="@+id/navigation_datetime"
+        android:name="com.severett.androidxdemo.ui.datetime.DateTimeFragment"
+        android:label="@string/title_datetime"
+        tools:layout="@layout/fragment_datetime" />
+
 </navigation>

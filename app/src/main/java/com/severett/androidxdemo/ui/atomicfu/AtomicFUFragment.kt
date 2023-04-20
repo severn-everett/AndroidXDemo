@@ -31,11 +31,11 @@ class AtomicFUFragment : Fragment() {
         binding.runRaceButton.setOnClickListener {
             val (safeValue, unsafeValue) = runRace()
             binding.safeValueLabel.text = resources.getString(
-                R.string.label_atomicfu_safe_value,
+                R.string.content_atomicfu_safe_value,
                 safeValue.toString()
             )
             binding.unsafeValueLabel.text = resources.getString(
-                R.string.label_atomicfu_unsafe_value,
+                R.string.content_atomicfu_unsafe_value,
                 unsafeValue.toString().padStart(5, ' ')
             )
         }

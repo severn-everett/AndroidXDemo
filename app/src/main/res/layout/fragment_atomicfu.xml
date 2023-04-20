@@ -33,7 +33,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/safeValueLabel"
-        tools:text="@string/label_atomicfu_unsafe_value" />
+        tools:text="@string/content_atomicfu_unsafe_value" />
 
     <TextView
         android:id="@+id/safeValueLabel"
@@ -46,17 +46,17 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/runRaceButton"
-        tools:text="@string/label_atomicfu_safe_value" />
+        tools:text="@string/content_atomicfu_safe_value" />
 
     <TextView
         android:id="@+id/headerLabel"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:background="@color/apiumhub_green_main"
         android:gravity="center"
         android:text="@string/label_atomicfu_header"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

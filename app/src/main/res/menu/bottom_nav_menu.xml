@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_html_black_24dp"
         android:title="@string/title_html" />
 
+    <item
+        android:id="@+id/navigation_datetime"
+        android:icon="@drawable/ic_calendar_black_24dp"
+        android:title="@string/title_datetime" />
+
 </menu>

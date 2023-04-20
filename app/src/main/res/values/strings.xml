@@ -2,11 +2,13 @@
     <string name="app_name">AndroidXDemo</string>
     <!-- Titles -->
     <string name="title_atomicfu">AtomicFU</string>
+    <string name="title_datetime">DateTime</string>
     <string name="title_html">HTML</string>
     <string name="title_serialization">Serialization</string>
     <!-- Buttons -->
     <string name="button_atomicfu_execute">Run Race</string>
-    <string name="button_html_generate">Generate HTML</string>
+    <string name="button_datetime_date">Pick Date</string>
+    <string name="button_html_generate">Generate</string>
     <string name="button_serialization_execute">Run Serde</string>
     <!-- Inputs -->
     <string name="input_html_name"><u>Name:</u></string>
@@ -15,9 +17,9 @@
     <string name="input_serialization_bazz">Enter Bazz (Comma-Separated):</string>
     <string name="input_serialization_count">Enter Count:</string>
     <!-- Labels -->
-    <string name="label_atomicfu_header">"Up And Atom!" Variable Races</string>
-    <string name="label_atomicfu_safe_value">&#160;&#160;&#160;&#160;Safe Value: %s</string>
-    <string name="label_atomicfu_unsafe_value">Unsafe Value: %s</string>
+    <string name="label_atomicfu_header">\"Up And Atom!\" Variable Races</string>
+    <string name="label_datetime_date_demo">Date Demo</string>
+    <string name="label_datetime_time_demo">Time Demo</string>
     <string name="label_html_input">Input</string>
     <string name="label_html_generated_html">Generated HTML</string>
     <string name="label_html_italics">Italics</string>
@@ -31,6 +33,19 @@
     <string name="default_serialization_bazz">Bazz Value</string>
     <string name="default_serialization_count">0</string>
     <!-- Content -->
+    <string name="content_atomicfu_safe_value">&#160;&#160;&#160;&#160;Safe Value: %s</string>
+    <string name="content_atomicfu_unsafe_value">Unsafe Value: %s</string>
+    <plurals name="content_datetime_dates_between">
+        <item quantity="one">%d day between %s and now.</item>
+        <item quantity="other">%d days between %s and now.</item>
+    </plurals>
+    <string-array name="content_datetime_timezones">
+        <item>Cairo</item>
+        <item>New York City</item>
+        <item>London</item>
+        <item>New Delhi</item>
+        <item>Tokyo</item>
+    </string-array>
     <string name="content_html_hello">Hello, %s!</string>
     <string name="content_html_link">Would you like to know more?</string>
 </resources>
