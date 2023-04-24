@@ -21,7 +21,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -34,9 +37,21 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    testOptions {
+        unitTests.all {  test ->
+            test.useJUnitPlatform()
+            test.jvmArgs = listOf(
+                // Arguments that are to be uncommented for LockCoarseningTest
+                // "-XX:+UnlockDiagnosticVMOptions",
+                // "-XX:+StressLCM",
+                // "-XX:+StressGCM",
+            )
+        }
+    }
 }
 
 dependencies {
+    val junitVersion: String by project
     //// Production
     // Implementation
     implementation("androidx.core:core-ktx:1.10.0")
@@ -54,9 +69,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     //// Test
     // Implementation
-    testImplementation("junit:junit:4.13.2")
+    // testImplementation("junit:junit:4.13.2")
     testImplementation("org.jctools:jctools-core:4.0.1")
     testImplementation("org.jetbrains.kotlinx:lincheck:2.17")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
     // Android implementation
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

@@ -5,8 +5,7 @@ import org.jetbrains.kotlinx.lincheck.annotations.Param
 import org.jetbrains.kotlinx.lincheck.check
 import org.jetbrains.kotlinx.lincheck.strategy.managed.modelchecking.ModelCheckingOptions
 import org.jetbrains.kotlinx.lincheck.strategy.stress.StressOptions
-import org.jetbrains.kotlinx.lincheck.verifier.VerifierState
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import java.util.concurrent.ConcurrentHashMap
 
 @Param(name = "key", gen = AnEnumGen::class, conf = "")
