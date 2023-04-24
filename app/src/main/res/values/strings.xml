@@ -6,7 +6,8 @@
     <string name="title_html">HTML</string>
     <string name="title_serialization">Serialization</string>
     <!-- Buttons -->
-    <string name="button_atomicfu_execute">Run Race</string>
+    <string name="button_atomicfu_lock_demo">Lock Demo</string>
+    <string name="button_atomicfu_run_race">Run Race</string>
     <string name="button_datetime_date">Pick Date</string>
     <string name="button_html_generate">Generate</string>
     <string name="button_serialization_execute">Run Serde</string>
@@ -34,6 +35,7 @@
     <string name="default_serialization_bazz">Bazz Value</string>
     <string name="default_serialization_count">0</string>
     <!-- Content -->
+    <string name="content_atomicfu_locked_value">Locked Value: %s</string>
     <string name="content_atomicfu_safe_value">&#160;&#160;&#160;&#160;Safe Value: %s</string>
     <string name="content_atomicfu_unsafe_value">Unsafe Value: %s</string>
     <plurals name="content_datetime_dates_between">

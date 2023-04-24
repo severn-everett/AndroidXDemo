@@ -8,10 +8,14 @@ import androidx.fragment.app.Fragment
 import com.severett.androidxdemo.R
 import com.severett.androidxdemo.databinding.FragmentAtomicfuBinding
 import kotlinx.atomicfu.atomic
+import kotlinx.atomicfu.locks.reentrantLock
+import kotlinx.atomicfu.locks.withLock
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+
+private const val LIMIT = 10_000
 
 class AtomicFUFragment : Fragment() {
     private var _binding: FragmentAtomicfuBinding? = null
@@ -39,6 +43,14 @@ class AtomicFUFragment : Fragment() {
                 unsafeValue.toString().padStart(5, ' ')
             )
         }
+
+        binding.lockDemoButton.setOnClickListener {
+            val lockedValue = lockDemo()
+            binding.lockedValueLabel.text = resources.getString(
+                R.string.content_atomicfu_locked_value,
+                lockedValue.toString()
+            )
+        }
         return root
     }
 
@@ -51,7 +63,7 @@ class AtomicFUFragment : Fragment() {
         val safeCounter = atomic(0)
         var unsafeCounter = 0
         runBlocking {
-            (0 until 10_000).map {
+            (0 until LIMIT).map {
                 CoroutineScope(Dispatchers.Default).launch {
                     safeCounter += 1
                     unsafeCounter += 1
@@ -59,5 +71,18 @@ class AtomicFUFragment : Fragment() {
             }.forEach { it.join() }
         }
         return safeCounter.value to unsafeCounter
+    }
+
+    private fun lockDemo(): Int {
+        var unsafeValue = 0
+        val lock = reentrantLock()
+        runBlocking {
+            (0 until LIMIT).map {
+                CoroutineScope(Dispatchers.Default).launch {
+                    lock.withLock { unsafeValue += 1 }
+                }
+            }.forEach { it.join() }
+        }
+        return unsafeValue
     }
 }
