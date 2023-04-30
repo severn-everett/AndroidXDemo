@@ -18,6 +18,7 @@
     <string name="input_serialization_fizz">Enter Fizz:</string>
     <string name="input_serialization_bazz">Enter Bazz (Comma-Separated):</string>
     <string name="input_serialization_count">Enter Count:</string>
+    <string name="input_serialization_type">Select Type:</string>
     <!-- Labels -->
     <string name="label_atomicfu_header">\"Up And Atom!\" Variable Races</string>
     <string name="label_datetime_date_demo">Date Demo</string>
@@ -27,6 +28,8 @@
     <string name="label_html_italics">Italics</string>
     <string name="label_html_bold">Bold</string>
     <string name="label_html_underlined"><u>Underlined</u></string>
+    <string name="label_serialization_type_radio_normal">Normal</string>
+    <string name="label_serialization_type_radio_third_party">Third-Party</string>
     <string name="label_serialization_serialized">Serialized Foo</string>
     <string name="label_serialization_deserialized">Deserialized Foo</string>
     <!-- Defaults -->

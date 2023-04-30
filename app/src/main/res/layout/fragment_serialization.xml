@@ -93,6 +93,25 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextBazz"
         tools:text="@string/input_serialization_count" />
 
+    <TextView
+        android:id="@+id/selectTypeLabel"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@color/apiumhub_green_main"
+        android:gravity="center_vertical"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCount"
+        tools:text="@string/input_serialization_type" />
+
     <EditText
         android:id="@+id/editTextCount"
         android:layout_width="360dp"
@@ -112,7 +131,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="23dp"
         android:layout_marginEnd="159dp"
         android:backgroundTint="@color/black"
         android:text="@string/button_serialization_execute"
@@ -120,8 +138,9 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCount" />
+        app:layout_constraintTop_toBottomOf="@+id/serializationTypeRadioGroup" />
 
     <TextView
         android:id="@+id/serializedFooLabel"
@@ -180,5 +199,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deserializedFooLabel" />
+
+    <RadioGroup
+        android:id="@+id/serializationTypeRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectTypeLabel">
+
+        <RadioButton
+            android:id="@+id/radioTypeNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_serialization_type_radio_normal"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioTypeThirdParty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_serialization_type_radio_third_party"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
