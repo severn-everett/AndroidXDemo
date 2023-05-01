@@ -1,5 +1,6 @@
 package com.severett.androidxdemo.ui.html
 
+import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,9 +31,11 @@ class HTMLFragment : Fragment() {
         binding.checkBoxBold.setOnCheckedChangeListener { _, isChecked ->
             htmlViewModel.isBold.value = isChecked
         }
-        binding.checkboxItalics.setOnCheckedChangeListener { _, isChecked ->
-            htmlViewModel.isItalics.value = isChecked
+        binding.checkboxStrikethrough.setOnCheckedChangeListener { _, isChecked ->
+            htmlViewModel.isStrikethrough.value = isChecked
         }
+        binding.checkboxStrikethrough.paintFlags =
+            binding.checkboxStrikethrough.paintFlags or STRIKE_THRU_TEXT_FLAG
         binding.checkboxUnderlined.setOnCheckedChangeListener { _, isChecked ->
             htmlViewModel.isUnderlined.value = isChecked
         }

@@ -25,7 +25,7 @@
     <string name="label_datetime_time_demo">Time Demo</string>
     <string name="label_html_input">Input</string>
     <string name="label_html_generated_html">Generated HTML</string>
-    <string name="label_html_italics">Italics</string>
+    <string name="label_html_strikethrough"><s>Strikethrough</s></string>
     <string name="label_html_bold">Bold</string>
     <string name="label_html_underlined"><u>Underlined</u></string>
     <string name="label_serialization_type_radio_normal">Normal</string>

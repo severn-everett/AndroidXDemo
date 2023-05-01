@@ -64,7 +64,7 @@
         android:id="@+id/checkBoxBold"
         android:layout_width="99dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginEnd="54dp"
         android:gravity="center"
         android:layoutDirection="inherit"
         android:text="@string/label_html_bold"
@@ -75,16 +75,15 @@
         app:layout_constraintTop_toBottomOf="@+id/stylingLabel" />
 
     <CheckBox
-        android:id="@+id/checkboxItalics"
-        android:layout_width="112dp"
+        android:id="@+id/checkboxStrikethrough"
+        android:layout_width="144dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="9dp"
         android:gravity="center"
         android:layoutDirection="inherit"
-        android:text="@string/label_html_italics"
+        android:text="@string/label_html_strikethrough"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxBold" />
 
@@ -92,13 +91,14 @@
         android:id="@+id/checkboxUnderlined"
         android:layout_width="144dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="9dp"
         android:gravity="center"
         android:layoutDirection="inherit"
         android:text="@string/label_html_underlined"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxItalics" />
+        app:layout_constraintTop_toBottomOf="@+id/checkboxStrikethrough" />
 
     <Button
         android:id="@+id/generateHTMLButton"
