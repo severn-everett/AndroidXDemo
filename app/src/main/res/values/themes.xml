@@ -1,35 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.AndroidXDemo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSurface">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/apiumhub_green_main</item>
-        <item name="colorSecondaryVariant">@color/apiumhub_green_alt</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Action bar theme. -->
-        <item name="actionBarTheme">@style/Theme.MyApplication.ActionBar</item>
-        <!-- Customize your theme here. -->
-        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
-        <item name="android:spinnerDropDownItemStyle">@style/spinnerDropDownItemStyle</item>
-    </style>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-    <style name="Theme.MyApplication.ActionBar" parent="ThemeOverlay.MaterialComponents.ActionBar">
-        <!-- text color for action bar title -->
-        <item name="android:textColorPrimary">@color/apiumhub_green_main</item>
-    </style>
-
-    <style name="spinnerItemStyle">
-        <item name="android:padding">12dp</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="spinnerDropDownItemStyle">
-        <item name="android:padding">18dp</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
+    <style name="Theme.ComposeAndroid" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

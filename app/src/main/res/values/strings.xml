@@ -6,11 +6,11 @@
     <string name="title_html">HTML</string>
     <string name="title_serialization">Serialization</string>
     <!-- Buttons -->
-    <string name="button_atomicfu_lock_demo">Lock Demo</string>
-    <string name="button_atomicfu_run_race">Run Race</string>
-    <string name="button_datetime_date">Pick Date</string>
-    <string name="button_html_generate">Generate</string>
-    <string name="button_serialization_execute">Run Serde</string>
+    <string name="button_atomicfu_lock_demo">LOCK DEMO</string>
+    <string name="button_atomicfu_run_race">RUN RACE</string>
+    <string name="button_datetime_date">PICK DATE</string>
+    <string name="button_html_generate">GENERATE</string>
+    <string name="button_serialization_execute">RUN SERDE</string>
     <!-- Inputs -->
     <string name="input_datetime_timezone">Select Time Zone:</string>
     <string name="input_html_name"><u>Name:</u></string>
