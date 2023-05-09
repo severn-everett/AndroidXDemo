@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,9 +15,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -38,6 +43,7 @@ private val inputLabelTopMargin = 20.dp
 private val styleLabelSize = 18.sp
 private val generateButtonSideMargin = 115.dp
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun HTML(modifier: Modifier = Modifier) {
     ConstraintLayout {
@@ -62,6 +68,8 @@ fun HTML(modifier: Modifier = Modifier) {
 
         val helloStr = stringResource(id = R.string.content_html_hello, nameInput)
         val linkStr = stringResource(id = R.string.content_html_link)
+
+        val keyboardController = LocalSoftwareKeyboardController.current
 
         SectionLabel(
             modifier = modifier.constrainAs(inputSectionLabel) {
@@ -89,6 +97,8 @@ fun HTML(modifier: Modifier = Modifier) {
             },
             textValue = nameInput,
             placeholder = stringResource(id = R.string.default_html_name),
+            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
+            keyboardActions = KeyboardActions(onGo = { keyboardController?.hide() }),
             width = 164.dp,
             onValueChange = { nameInput = it }
         )
@@ -170,6 +180,7 @@ fun HTML(modifier: Modifier = Modifier) {
                 .height(60.dp)
                 .width(180.dp),
             onClick = {
+                keyboardController?.hide()
                 generatedHtmlStr = generateHTML(
                     helloStr = helloStr,
                     linkStr = linkStr,

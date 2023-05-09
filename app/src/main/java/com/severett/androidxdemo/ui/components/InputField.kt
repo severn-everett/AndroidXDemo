@@ -2,6 +2,7 @@ package com.severett.androidxdemo.ui.components
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -24,6 +25,7 @@ fun InputField(
     placeholder: String = "",
     width: Dp = 360.dp,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+    keyboardActions: KeyboardActions = KeyboardActions.Default,
     onValueChange: (String) -> Unit = {}
 ) {
     TextField(
@@ -34,6 +36,7 @@ fun InputField(
         placeholder = { Text(text = placeholder) },
         textStyle = TextStyle(fontSize = 17.sp, color = ApiumBlack),
         keyboardOptions = keyboardOptions,
+        keyboardActions = keyboardActions,
         onValueChange = onValueChange,
         colors = TextFieldDefaults.textFieldColors(
             textColor = ApiumBlack,

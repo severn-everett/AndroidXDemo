@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -12,9 +13,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -39,6 +43,7 @@ private val displayStrSize = 18.sp
 private val displayStrPadding = 5.dp
 private val buttonFontSize = 20.sp
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun Serializable(modifier: Modifier = Modifier) {
     var fizzText by rememberSaveable { mutableStateOf("") }
@@ -48,6 +53,8 @@ fun Serializable(modifier: Modifier = Modifier) {
     var displaySerdeLabels by rememberSaveable { mutableStateOf(false) }
     var serializedDisplay by rememberSaveable { mutableStateOf("") }
     var deserializedDisplay by rememberSaveable { mutableStateOf("") }
+
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     ConstraintLayout {
         val (
@@ -75,6 +82,8 @@ fun Serializable(modifier: Modifier = Modifier) {
             modifier = modifier.constrainAs(fizzInput, setInputConstraints(enterFizz)),
             textValue = fizzText,
             placeholder = stringResource(id = R.string.default_serialization_fizz),
+            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
+            keyboardActions = KeyboardActions(onGo = { keyboardController?.hide() }),
             onValueChange = { fizzText = it }
         )
         SectionLabel(
@@ -88,6 +97,8 @@ fun Serializable(modifier: Modifier = Modifier) {
             modifier = modifier.constrainAs(bazzInput, setInputConstraints(enterBazz)),
             textValue = bazzText,
             placeholder = stringResource(id = R.string.default_serialization_bazz),
+            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
+            keyboardActions = KeyboardActions(onGo = { keyboardController?.hide() }),
             onValueChange = { bazzText = it }
         )
         SectionLabel(
@@ -101,7 +112,11 @@ fun Serializable(modifier: Modifier = Modifier) {
             modifier = modifier.constrainAs(countInput, setInputConstraints(enterCount)),
             textValue = countText,
             placeholder = stringResource(id = R.string.default_serialization_count),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number,
+                imeAction = ImeAction.Done
+            ),
+            keyboardActions = KeyboardActions(onGo = { keyboardController?.hide() }),
             onValueChange = { countText = it }
         )
         Row(
@@ -135,6 +150,7 @@ fun Serializable(modifier: Modifier = Modifier) {
                 end.linkTo(parent.end, margin = 159.dp)
             },
             onClick = {
+                keyboardController?.hide()
                 val (serializedStr, deserializedStr) = runSerde(
                     isNormalSerde,
                     fizzText,
