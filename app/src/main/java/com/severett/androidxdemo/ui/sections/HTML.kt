@@ -122,27 +122,8 @@ fun HTML(modifier: Modifier = Modifier) {
             )
         }
         Row(
-            modifier = modifier.constrainAs(checkboxUnderlined) {
-                top.linkTo(checkboxBold.bottom)
-                end.linkTo(parent.end, margin = 43.dp)
-            },
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Checkbox(
-                onCheckedChange = {
-                    isUnderlinedChecked = !isUnderlinedChecked
-                },
-                checked = isUnderlinedChecked,
-            )
-            Text(
-                text = stringResource(id = R.string.label_html_underlined),
-                fontSize = styleLabelSize,
-                textDecoration = TextDecoration.Underline
-            )
-        }
-        Row(
             modifier = modifier.constrainAs(checkboxStrikethrough) {
-                top.linkTo(checkboxUnderlined.bottom)
+                top.linkTo(checkboxBold.bottom)
                 end.linkTo(parent.end, margin = 20.dp)
             },
             verticalAlignment = Alignment.CenterVertically
@@ -157,6 +138,25 @@ fun HTML(modifier: Modifier = Modifier) {
                 text = stringResource(id = R.string.label_html_strikethrough),
                 fontSize = styleLabelSize,
                 textDecoration = TextDecoration.LineThrough
+            )
+        }
+        Row(
+            modifier = modifier.constrainAs(checkboxUnderlined) {
+                top.linkTo(checkboxStrikethrough.bottom)
+                end.linkTo(parent.end, margin = 43.dp)
+            },
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Checkbox(
+                onCheckedChange = {
+                    isUnderlinedChecked = !isUnderlinedChecked
+                },
+                checked = isUnderlinedChecked,
+            )
+            Text(
+                text = stringResource(id = R.string.label_html_underlined),
+                fontSize = styleLabelSize,
+                textDecoration = TextDecoration.Underline
             )
         }
         // HTML Generation

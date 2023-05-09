@@ -2,4 +2,10 @@
 <resources>
 
     <style name="Theme.ComposeAndroid" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="DialogTheme" parent="android:Theme.Material.Dialog">
+        <item name="android:colorAccent">@color/apiumhub_green_main</item>
+        <item name="android:textColorPrimary">@color/apiumhub_green_main</item>
+        <item name="android:textColorSecondary">@color/apiumhub_green_main</item>
+        <item name="android:textColorTertiary">@color/apiumhub_green_main</item>
+    </style>
 </resources>

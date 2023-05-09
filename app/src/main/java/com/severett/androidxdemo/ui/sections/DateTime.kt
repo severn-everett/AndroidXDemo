@@ -1,6 +1,7 @@
 package com.severett.androidxdemo.ui.sections
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.widget.DatePicker
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -55,6 +56,12 @@ fun DateTime(modifier: Modifier = Modifier) {
     var selectedTime by rememberSaveable { mutableStateOf("") }
     var expanded by rememberSaveable { mutableStateOf(false) }
 
+    val datePickerCallback = { _: DatePicker, y: Int, m: Int, d: Int ->
+        selectedDate = LocalDate(year = y, month = Month(m + 1), dayOfMonth = d)
+        displayDate = true
+    }
+    val context = LocalContext.current
+
     ConstraintLayout {
         val (
             dateDemoSectionLabel,
@@ -65,20 +72,6 @@ fun DateTime(modifier: Modifier = Modifier) {
             timeZoneSpinner,
             currentTimeDisplay,
         ) = createRefs()
-
-        val currentTime = Clock.System.todayIn(TimeZone.currentSystemDefault())
-
-
-        val mDatePickerDialog = DatePickerDialog(
-            LocalContext.current,
-            { _: DatePicker, y: Int, m: Int, d: Int ->
-                selectedDate = LocalDate(year = y, month = Month(m + 1), dayOfMonth = d)
-                displayDate = true
-            },
-            currentTime.year,
-            currentTime.monthNumber - 1,
-            currentTime.dayOfMonth
-        )
 
         SectionLabel(
             modifier = modifier.constrainAs(dateDemoSectionLabel) {
@@ -93,7 +86,13 @@ fun DateTime(modifier: Modifier = Modifier) {
                 start.linkTo(parent.start, margin = 138.dp)
                 end.linkTo(parent.end, margin = 138.dp)
             },
-            onClick = { mDatePickerDialog.show() },
+            onClick = {
+                launchDatePicker(
+                    context,
+                    datePickerCallback,
+                    Clock.System.todayIn(TimeZone.currentSystemDefault())
+                )
+            },
             text = stringResource(id = R.string.button_datetime_date),
             fontSize = 18.sp
         )
@@ -209,4 +208,19 @@ fun DateTime(modifier: Modifier = Modifier) {
             fontSize = 20.sp
         )
     }
+}
+
+private fun launchDatePicker(
+    context: Context,
+    listener: DatePickerDialog.OnDateSetListener,
+    currentTime: LocalDate
+) {
+    DatePickerDialog(
+        context,
+        R.style.DialogTheme,
+        listener,
+        currentTime.year,
+        currentTime.monthNumber - 1,
+        currentTime.dayOfMonth
+    ).show()
 }

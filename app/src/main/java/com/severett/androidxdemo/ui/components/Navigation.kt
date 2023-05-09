@@ -31,11 +31,7 @@ fun TopBar(navController: NavHostController = rememberNavController()) {
         ?.let { route -> Constants.NavItems.find { navItem -> navItem.route == route } }
         ?.let { navItem -> stringResource(id = navItem.labelId) }
         ?: ""
-    CenterAlignedTopAppBar(
-        title = {
-            Text(text = currentTitle, fontWeight = FontWeight.Bold)
-        }
-    )
+    CenterAlignedTopAppBar(title = { Text(text = currentTitle, fontWeight = FontWeight.Bold) })
 }
 
 @Composable
@@ -53,7 +49,7 @@ fun MainNavigation(navController: NavHostController, padding: PaddingValues) {
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
-    NavigationBar() {
+    NavigationBar {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         Constants.NavItems.forEach { navItem ->
@@ -64,15 +60,10 @@ fun BottomNavigationBar(navController: NavHostController) {
                     Icon(
                         painter = painterResource(id = navItem.drawableId),
                         contentDescription = null,
-                        // tint = ApiumGreenMain,
                     )
                 },
                 label = {
-                    Text(
-                        text = stringResource(id = navItem.labelId),
-                        // color = ApiumGreenMain,
-                        fontSize = 12.sp
-                    )
+                    Text(text = stringResource(id = navItem.labelId), fontSize = 12.sp)
                 },
                 alwaysShowLabel = true,
             )
