@@ -36,6 +36,7 @@ import com.severett.androidxdemo.serde.LocalDateSaver
 import com.severett.androidxdemo.ui.components.AppButton
 import com.severett.androidxdemo.ui.components.SectionLabel
 import com.severett.androidxdemo.ui.theme.ApiumBlack
+import com.severett.androidxdemo.ui.theme.europaFamily
 import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.Month
@@ -169,7 +170,13 @@ fun DateTime(modifier: Modifier = Modifier) {
                     "Asia/Tokyo"
                 ).forEach { timeZone ->
                     DropdownMenuItem(
-                        text = { Text(text = timeZone, fontSize = 18.sp) },
+                        text = {
+                            Text(
+                                text = timeZone,
+                                fontFamily = europaFamily,
+                                fontSize = 18.sp
+                            )
+                        },
                         onClick = {
                             selectedTimeZone = timeZone
                             selectedTime = if (timeZone.isNotBlank()) {

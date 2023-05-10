@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
+import com.severett.androidxdemo.ui.theme.europaFamily
 
 @Composable
 fun AppButton(
@@ -24,6 +25,7 @@ fun AppButton(
         Text(
             text = text,
             fontSize = fontSize,
+            fontFamily = europaFamily,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
         )

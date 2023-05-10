@@ -20,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.severett.androidxdemo.ui.theme.europaFamily
 import com.severett.androidxdemo.ui.util.Constants
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -31,7 +32,13 @@ fun TopBar(navController: NavHostController = rememberNavController()) {
         ?.let { route -> Constants.NavItems.find { navItem -> navItem.route == route } }
         ?.let { navItem -> stringResource(id = navItem.labelId) }
         ?: ""
-    CenterAlignedTopAppBar(title = { Text(text = currentTitle, fontWeight = FontWeight.Bold) })
+    CenterAlignedTopAppBar(title = {
+        Text(
+            text = currentTitle,
+            fontFamily = europaFamily,
+            fontWeight = FontWeight.Bold
+        )
+    })
 }
 
 @Composable
@@ -63,7 +70,11 @@ fun BottomNavigationBar(navController: NavHostController) {
                     )
                 },
                 label = {
-                    Text(text = stringResource(id = navItem.labelId), fontSize = 12.sp)
+                    Text(
+                        text = stringResource(id = navItem.labelId),
+                        fontFamily = europaFamily,
+                        fontSize = 13.sp
+                    )
                 },
                 alwaysShowLabel = true,
             )

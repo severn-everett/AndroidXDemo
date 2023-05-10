@@ -27,11 +27,11 @@ import kotlinx.coroutines.runBlocking
 
 private const val LIMIT = 10_000
 private val buttonTopMargin = 72.dp
-private val buttonSideMargin = 54.dp
+private val buttonSideMargin = 50.dp
 private val buttonWidth = 120.dp
 private val resultsTopMargin = 32.dp
-private val raceSideMargin = 16.dp
-private val lockDemoSideMargin = 16.dp
+private val raceSideMargin = 12.dp
+private val lockDemoSideMargin = 12.dp
 private val buttonFontSize = 18.sp
 
 @Composable

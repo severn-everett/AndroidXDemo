@@ -112,6 +112,7 @@ fun HTML(modifier: Modifier = Modifier) {
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
         )
+        // Bold Checkbox
         Row(
             modifier = modifier.constrainAs(checkboxBold) {
                 top.linkTo(stylingLabel.bottom)
@@ -131,10 +132,11 @@ fun HTML(modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Bold,
             )
         }
+        // Strikethrough Checkbox
         Row(
             modifier = modifier.constrainAs(checkboxStrikethrough) {
                 top.linkTo(checkboxBold.bottom)
-                end.linkTo(parent.end, margin = 20.dp)
+                end.linkTo(parent.end, margin = 21.dp)
             },
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -150,6 +152,7 @@ fun HTML(modifier: Modifier = Modifier) {
                 textDecoration = TextDecoration.LineThrough
             )
         }
+        // Underlined Checkbox
         Row(
             modifier = modifier.constrainAs(checkboxUnderlined) {
                 top.linkTo(checkboxStrikethrough.bottom)
